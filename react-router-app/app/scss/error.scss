@@ -1,0 +1,129 @@
+:root {
+    --bg: #fff6f6;
+    --accent: #d32f2f;
+    --accent-strong: #b71c1c;
+    --text: #2b0f0f;
+    --muted: #4a2f2f;
+    --code-bg: #0f1720;
+    --code-text: #e6f0ff;
+    --radius: 10px;
+    --glass: rgba(255, 255, 255, 0.6);
+}
+
+main:has(#error-message) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+#error-message {
+    padding: 22px;
+    background: linear-gradient(180deg, var(--bg), #fff0f0 120%);
+    border-left: 6px solid var(--accent);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(15, 20, 25, 0.08);
+    backdrop-filter: blur(4px);
+    box-sizing: border-box;
+    line-height: 1.45;
+
+    & > a {
+        color: var(--accent-strong);
+    }
+
+    /* Headline */
+    & > h1 {
+        margin: 0 0 8px 0;
+        font-size: 2rem;
+        color: var(--accent-strong);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Short description/details */
+    & > p {
+        margin: 0 0 14px 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+        word-break: break-word;
+        white-space: pre-wrap;
+    }
+
+    /* Stack / code block */
+    pre {
+        margin: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.7),
+            rgba(2, 6, 23, 0.9)
+        );
+        color: var(--code-text);
+        padding: 14px;
+        border-radius: 8px;
+        overflow: auto;
+        max-height: 40vh;
+        box-shadow: inset 0 -6px 18px rgba(0, 0, 0, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        font-family:
+            ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+            "Courier New", monospace;
+        font-size: 0.85rem;
+        line-height: 1.35;
+        white-space: pre-wrap;
+        word-break: break-word;
+
+        /* code element inherits styling */
+        code {
+            display: block;
+            color: inherit;
+            background: transparent;
+            padding: 0;
+            border: 0;
+        }
+
+        /* small helper for very long single-line stacks */
+        &::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+        }
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    #error-message {
+        margin: 18px;
+        padding: 16px;
+        border-left-width: 4px;
+    }
+
+    #error-message > h1 {
+        font-size: 1.05rem;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+    #error-message {
+        transform-origin: top center;
+        animation: drop-in 240ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+    }
+
+    @keyframes drop-in {
+        from {
+            opacity: 0;
+            transform: translateY(-8px) scale(0.995);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}

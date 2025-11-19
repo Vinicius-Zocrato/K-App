@@ -1,0 +1,83 @@
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+
+    .tab-button {
+        padding: 1rem 2rem;
+        border: 2px solid var(--primary-color);
+        background: transparent;
+        color: var(--primary-color);
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        &.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-light);
+        }
+    }
+}
+
+.menu-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+
+    .menu-item {
+        animation: fadeIn 0.5s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--accent-color);
+
+        &:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .item-info {
+            h4 {
+                color: var(--primary-color);
+                font-size: 1.3rem;
+                margin-bottom: 0.3rem;
+            }
+            p {
+                color: #666;
+                font-size: 0.9rem;
+            }
+        }
+
+        .item-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

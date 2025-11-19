@@ -1,0 +1,95 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f6f8f4;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.table-container {
+    overflow-x: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    background: white;
+    text-align: center;
+    min-width: 800px;
+    border-spacing: 0;
+}
+
+thead th {
+    background-color: #c7e3c0;
+    color: #1a3b1f;
+    padding: 10px;
+    border: 2px solid #306030;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 1000px;
+}
+
+td,
+th {
+    border: 2px solid #306030;
+    vertical-align: top;
+    padding: 0;
+}
+
+.time {
+    background-color: #f9d6b2;
+    color: #a24b00;
+    font-weight: bold;
+    font-size: 1em;
+    width: 70px;
+    vertical-align: middle;
+}
+
+.time-row td {
+    min-width: 130px;
+}
+
+.empty {
+    background-color: #e7f3e0;
+}
+
+td div {
+    padding: 6px 8px;
+    border-bottom: 1px solid #999999;
+}
+
+td div:last-child {
+    border-bottom: none;
+}
+
+tbody td {
+    line-height: 1.5em;
+}
+
+.closed {
+    background-color: #e0e0e0;
+
+    vertical-align: middle;
+
+    font-weight: bold;
+    color: #666666;
+
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+tbody tr:first-child .closed {
+    border-top: 2px solid #306030;
+}
+
+tbody tr:last-child .closed {
+    border-bottom: 2px solid #306030;
+}
+
+.grey-cell {
+    background-color: #e0e0e0;
+    height: 25px;
+}
