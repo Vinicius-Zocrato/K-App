@@ -8,27 +8,29 @@
     z-index: 1000;
     transition: background 0.3s ease;
 
-    .container {
+    .btn {
+        transform: scale(1.2);
+        border-radius: 50%;
+        height: 2.5rem;
+        aspect-ratio: 1/1;
+        cursor: pointer;
+        user-select: none;
+
+        path {
+            transform: scale(calc(1 / 1.3)) translateX(15%) translateY(15%);
+        }
+    }
+
+    .btn:hover {
+        background-color: #ffffff30;
+    }
+
+    .navbar-header {
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        .open-menu-btn {
-            height: 60%;
-            aspect-ratio: 1/1;
-            cursor: pointer;
-            user-select: none;
-
-            path {
-                stroke: var(--text-light);
-                transition: stroke 0.3s ease;
-            }
-
-            &:hover path {
-                stroke: var(--accent-color);
-            }
-        }
+        padding: 0 1rem;
 
         .nav-brand {
             font-size: 1.8rem;
@@ -39,9 +41,21 @@
             gap: 1rem;
             align-items: center;
 
-            .logo {
-                max-height: 4rem;
+            .open-menu.btn {
+                path {
+                    stroke: var(--text-light);
+                    transition: stroke 0.3s ease;
+                }
+
+                &:hover path {
+                    stroke: var(--accent-color);
+                }
             }
+        }
+
+        .logo {
+            display: block;
+            max-height: 4rem;
         }
     }
 
@@ -78,14 +92,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 0.5rem;
+            padding: 0 0.5rem 0 1.5rem;
 
-            svg {
-                height: 70%;
-                aspect-ratio: 1/1;
-                cursor: pointer;
-                user-select: none;
-
+            .close-menu.btn {
                 path {
                     fill: var(--text-light);
                     transition: fill 0.3s ease;
