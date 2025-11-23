@@ -1,12 +1,12 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-8);
+    gap: 2rem;
 
     .service-card {
         background: var(--card-bg);
-        padding: var(--space-8);
-        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        border-radius: 15px;
         text-align: center;
         box-shadow: var(--shadow);
         transition: all 0.3s ease;
@@ -18,14 +18,14 @@
         }
 
         .service-icon {
-            font-size: var(--font-size-5xl);
-            margin-bottom: var(--space-4);
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
 
         h3 {
             color: var(--primary-color);
-            font-size: var(--font-size-3xl);
-            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         p {

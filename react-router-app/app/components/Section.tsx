@@ -1,4 +1,4 @@
-import "./../../scss/Section.scss";
+import "~/scss/Section.scss";
 
 interface Props {
     id?: string;
@@ -20,7 +20,7 @@ function Section({
     return (
         <>
             {id && !noAnchor && (
-                <div className="anchor">
+                <div className='anchor'>
                     <div id={id} />
                 </div>
             )}
@@ -29,8 +29,8 @@ function Section({
                 {...(noAnchor ? { id: id } : {})}
                 className={`section ${darkSection ? "dark" : ""} ${className}`}
             >
-                <div className="container">
-                    {title && <h2 className="section-title">{title}</h2>}
+                <div className='container'>
+                    {title && <h2 className='section-title'>{title}</h2>}
                     {children}
                 </div>
             </section>

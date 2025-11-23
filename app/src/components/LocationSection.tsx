@@ -1,5 +1,5 @@
-import Section from "~/components/Section";
-import "~/scss/LocationSection.scss";
+import Section from "./Section";
+import "./LocationSection.scss";
 
 function LocationSection() {
     return (

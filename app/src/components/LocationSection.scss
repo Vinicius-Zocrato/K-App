@@ -1,45 +1,45 @@
 .location-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
+    gap: 3rem;
     align-items: start;
 
     .location-info {
         h3 {
             color: var(--primary-color);
             font-size: 1.8rem;
-            margin-bottom: var(--space-4);
+            margin-bottom: 1rem;
         }
 
         p {
-            font-size: var(--font-size-lg);
+            font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: var(--space-8);
+            margin-bottom: 2rem;
         }
 
         .location-details {
             display: flex;
             flex-direction: column;
-            gap: var(--space-4);
+            gap: 1rem;
 
             .detail-item {
                 display: flex;
                 align-items: center;
-                gap: var(--space-4);
-                padding: var(--space-4);
+                gap: 1rem;
+                padding: 1rem;
                 background: var(--light-bg);
-                border-radius: var(--radius-md);
+                border-radius: 10px;
                 border-left: 4px solid var(--accent-color);
 
                 .icon {
-                    font-size: var(--font-size-3xl);
+                    font-size: 1.5rem;
                 }
             }
         }
     }
 
     .map-container {
-        border-radius: var(--radius-lg);
+        border-radius: 15px;
         overflow: hidden;
         box-shadow: var(--shadow);
         height: 400px;

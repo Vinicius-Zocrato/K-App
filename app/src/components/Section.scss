@@ -3,12 +3,12 @@
 
     div {
         position: absolute;
-        top: calc(-1 * var(--space-20));
+        top: -5rem;
     }
 }
 
 .section {
-    padding: var(--space-20) 0;
+    padding: 5rem 0;
 
     &.dark {
         background: var(--light-bg);
@@ -17,7 +17,7 @@
     .section-title {
         text-align: center;
         font-size: 2.5rem;
-        margin-bottom: var(--space-12);
+        margin-bottom: 3rem;
         color: var(--primary-color);
         position: relative;
         display: inline-block;
@@ -33,13 +33,13 @@
             width: 80px;
             height: 4px;
             background: var(--accent-color);
-            border-radius: var(--radius-half);
+            border-radius: 2px;
         }
     }
 }
 
 @media (max-width: 480px) {
     .section-title {
-        font-size: var(--font-size-4xl);
+        font-size: 2rem;
     }
 }

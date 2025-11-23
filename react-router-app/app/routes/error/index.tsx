@@ -1,18 +1,16 @@
-import { isRouteErrorResponse, useRouteError } from "react-router";
+import { isRouteErrorResponse, useNavigate, useRouteError } from "react-router";
 import MainLayout from "~/layouts/MainLayout";
 
 export function ErrorBoundary() {
+    const navigate = useNavigate();
     const error = useRouteError();
     let message = "Oops!";
     let details = "An unexpected error occurred.";
     let stack: string | undefined;
 
     if (isRouteErrorResponse(error)) {
-        message = error.status === 404 ? "404" : "Error";
-        details =
-            error.status === 404
-                ? "The requested page could not be found."
-                : error.statusText || details;
+        message = "Error" + error.status;
+        details = error.statusText || details;
     } else if (import.meta.env.DEV && error && error instanceof Error) {
         details = error.message;
         stack = error.stack;
@@ -20,10 +18,10 @@ export function ErrorBoundary() {
 
     return (
         <MainLayout>
-            <div id='error-message'>
+            <div id='error-message' className='center'>
                 <h1>{message}</h1>
-                <a href='.'>Back to home</a>
                 <p>{details}</p>
+                <button onClick={() => navigate(-1)}>Retour</button>
                 {stack && (
                     <pre>
                         <code>{stack}</code>

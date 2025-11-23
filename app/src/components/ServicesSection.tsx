@@ -1,5 +1,5 @@
-import Section from "~/components/Section";
-import "~/scss/ServicesSection.scss";
+import Section from "./Section";
+import "./ServicesSection.scss";
 
 interface ServiceCardProps {
     title: string;

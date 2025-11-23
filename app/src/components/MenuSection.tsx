@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Section from "~/components/Section";
-import "~/scss/MenuSection.scss";
+import Section from "./Section";
+import "./MenuSection.scss";
 
 interface TabButtonProps {
     id: string;

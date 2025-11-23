@@ -1,17 +1,17 @@
 .menu-tabs {
     display: flex;
     justify-content: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-12);
+    gap: 1rem;
+    margin-bottom: 3rem;
     flex-wrap: wrap;
 
     .tab-button {
-        padding: var(--space-4) var(--space-8);
+        padding: 1rem 2rem;
         border: 2px solid var(--primary-color);
         background: transparent;
         color: var(--primary-color);
-        border-radius: var(--radius-half);
-        font-size: var(--font-size-base);
+        border-radius: 50px;
+        font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -30,17 +30,19 @@
 }
 
 .menu-content {
+    max-width: 900px;
+    margin: 0 auto;
     display: grid;
-    gap: var(--space-6);
+    gap: 1.5rem;
 
     .menu-item {
         animation: fadeIn 0.5s ease;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--space-6);
+        padding: 1.5rem;
         background: var(--card-bg);
-        border-radius: var(--radius-md);
+        border-radius: 10px;
         box-shadow: var(--shadow);
         transition: all 0.3s ease;
         border-left: 4px solid var(--accent-color);
@@ -53,17 +55,17 @@
         .item-info {
             h4 {
                 color: var(--primary-color);
-                font-size: var(--font-size-3xl);
-                margin-bottom: var(--space-1);
+                font-size: 1.3rem;
+                margin-bottom: 0.3rem;
             }
             p {
                 color: #666;
-                font-size: var(--font-size-sm);
+                font-size: 0.9rem;
             }
         }
 
         .item-price {
-            font-size: var(--font-size-3xl);
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--accent-color);
         }

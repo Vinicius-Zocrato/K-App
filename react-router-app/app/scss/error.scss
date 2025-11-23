@@ -1,67 +1,50 @@
-:root {
-    --bg: #fff6f6;
-    --accent: #d32f2f;
-    --accent-strong: #b71c1c;
-    --text: #2b0f0f;
-    --muted: #4a2f2f;
-    --code-bg: #0f1720;
-    --code-text: #e6f0ff;
-    --radius: 10px;
-    --glass: rgba(255, 255, 255, 0.6);
-}
-
-main:has(#error-message) {
+#error-message {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
 
-/* Container */
-#error-message {
-    padding: 22px;
-    background: linear-gradient(180deg, var(--bg), #fff0f0 120%);
-    border-left: 6px solid var(--accent);
-    border-radius: var(--radius);
-    box-shadow: 0 10px 30px rgba(15, 20, 25, 0.08);
-    backdrop-filter: blur(4px);
-    box-sizing: border-box;
-    line-height: 1.45;
-
-    & > a {
-        color: var(--accent-strong);
+    h1 {
+        font-size: var(--font-size-5xl);
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: var(--space-2);
     }
 
-    /* Headline */
-    & > h1 {
-        margin: 0 0 8px 0;
-        font-size: 2rem;
-        color: var(--accent-strong);
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    p {
+        font-size: var(--font-size-3xl);
+        color: var(--text-dark);
     }
 
-    /* Short description/details */
-    & > p {
-        margin: 0 0 14px 0;
-        color: var(--muted);
-        font-size: 0.98rem;
-        word-break: break-word;
-        white-space: pre-wrap;
+    button {
+        margin-top: var(--space-6);
+        padding: var(--space-4) var(--space-10);
+        background-color: var(--accent-color);
+        color: var(--text-light);
+        text-decoration: none;
+        border-radius: var(--radius-half);
+        border: none;
+        font-size: var(--font-size-lg);
+        font-weight: 400;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--text-light);
+            color: var(--accent-color);
+            box-shadow: var(--shadow-hover);
+        }
     }
 
-    /* Stack / code block */
     pre {
-        margin: 0;
         background: linear-gradient(
             180deg,
             rgba(0, 0, 0, 0.7),
             rgba(2, 6, 23, 0.9)
         );
-        color: var(--code-text);
-        padding: 14px;
-        border-radius: 8px;
+        color: var(--text-light);
+        padding: var(--space-4);
+        border-radius: var(--radius-md);
         overflow: auto;
         max-height: 40vh;
         box-shadow: inset 0 -6px 18px rgba(0, 0, 0, 0.45);
@@ -69,12 +52,12 @@ main:has(#error-message) {
         font-family:
             ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
             "Courier New", monospace;
-        font-size: 0.85rem;
+        font-size: var(--font-size-sm);
         line-height: 1.35;
         white-space: pre-wrap;
         word-break: break-word;
+        margin-top: var(--space-12);
 
-        /* code element inherits styling */
         code {
             display: block;
             color: inherit;
@@ -83,47 +66,25 @@ main:has(#error-message) {
             border: 0;
         }
 
-        /* small helper for very long single-line stacks */
         &::-webkit-scrollbar {
-            height: 10px;
+            height: var(--space-2);
         }
 
         &::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
         }
     }
 }
 
-/* Responsive adjustments */
 @media (max-width: 640px) {
     #error-message {
-        margin: 18px;
-        padding: 16px;
+        margin: var(--space-4);
+        padding: var(--space-4);
         border-left-width: 4px;
     }
 
     #error-message > h1 {
-        font-size: 1.05rem;
-    }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: no-preference) {
-    #error-message {
-        transform-origin: top center;
-        animation: drop-in 240ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
-    }
-
-    @keyframes drop-in {
-        from {
-            opacity: 0;
-            transform: translateY(-8px) scale(0.995);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+        font-size: var(--font-size-base);
     }
 }

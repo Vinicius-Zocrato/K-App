@@ -1,5 +1,5 @@
-import Section from "~/components/Section";
-import "~/scss/HoursSection.scss";
+import Section from "./Section";
+import "./HoursSection.scss";
 
 interface HoursItemProps {
     day: string;
